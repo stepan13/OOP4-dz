@@ -5,28 +5,28 @@ import java.util.Comparator;
 
 public class Teacher extends User{
 
-    private Long teacherId;
+//    private Long teacherId;
 
     public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
         super(firstName, secondName, patronymic, dateOfBirth);
     }
     public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth, Long teacherId) {
         super(firstName, secondName, patronymic, dateOfBirth);
-        this.teacherId = teacherId;
+        this.id = teacherId;
     }
 
     public Long getTeacherId() {
-        return teacherId;
+        return id;
     }
 
     public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
+        this.id = teacherId;
     }
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "teacherId=" + teacherId +
+                "teacherId=" + id +
                 '}';
     }
 

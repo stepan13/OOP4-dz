@@ -8,6 +8,8 @@ public class User {
     private String patronymic;
     private LocalDate dateOfBirth;
 
+    protected Long id;
+
     public User(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.secondName = secondName;
@@ -82,5 +84,9 @@ public class User {
         }
         return getDateOfBirth() != null ? getDateOfBirth().equals(user.getDateOfBirth()) :
                 user.getDateOfBirth() == null;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

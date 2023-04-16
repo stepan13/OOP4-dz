@@ -21,14 +21,26 @@ public class TeacherService implements UserService<Teacher> {
 
     @Override
     public void create(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
-        Long countMaxId = 0L;
+        /*Long countMaxId = 0L;
         for (Teacher teacher: teachers){
                 if (teacher.getTeacherId() > countMaxId){
                     countMaxId = teacher.getTeacherId();
             }
-        }
+        }*/
+        Long countMaxId = getMaxId();
         countMaxId++;
         Teacher teacher = new Teacher(firstName, secondName, patronymic, dateOfBirth, countMaxId);
         teachers.add(teacher);
     }
+
+    @Override
+    public Long getId(Teacher teacher) {
+        return teacher.getTeacherId();
+    }
+
+    @Override
+    public Long getMaxId() {
+        return getMaxId(teachers);
+    }
+
 }
